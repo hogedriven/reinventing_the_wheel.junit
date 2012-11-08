@@ -17,7 +17,13 @@ import org.junit.internal.matchers.TypeSafeMatcher;
 public class HogeTest {
 
 	@Test
-	public void testName() throws Exception {
+	public void testSuccess() throws Exception {
+		List<?> actual = Arrays.asList("H", "O", "G", "E");
+		assertThat(actual, is(size(4)));
+	}
+
+	@Test
+	public void testFail() throws Exception {
 		List<?> actual = Arrays.asList("H", "O", "G", "E");
 		assertThat(actual, is(size(3)));
 	}
